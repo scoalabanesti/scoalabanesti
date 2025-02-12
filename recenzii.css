@@ -1,0 +1,121 @@
+@keyframes fadeSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card {
+    opacity: 0;
+    animation: fadeSlideIn 0.6s ease-out forwards;
+}
+
+.card:nth-child(1) { animation-delay: 0.2s; }
+.card:nth-child(2) { animation-delay: 0.4s; }
+.card:nth-child(3) { animation-delay: 0.6s; }
+.card:nth-child(4) { animation-delay: 0.8s; }
+.card:nth-child(5) { animation-delay: 1s; }
+.card:nth-child(6) { animation-delay: 1.2s; }
+.card:nth-child(7) { animation-delay: 1.4s; }
+.card:nth-child(8) { animation-delay: 1.6s; }
+
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+        header {
+            background: #1e1e1e;
+            color: #d4af37;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(212, 175, 55, 0.2);
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: #d4af37;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: #ffd700;
+        }
+        main {
+            text-align: center;
+            padding: 50px;
+        }
+        .reviews {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        .review-card {
+            background: #1e1e1e;
+            padding: 20px;
+            margin: 10px;
+            box-shadow: 0 4px 8px rgba(212, 175, 55, 0.2);
+            width: 50%;
+            border-radius: 10px;
+            border: 1px solid #d4af37;
+            text-align: left;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .review-card img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 2px solid #d4af37;
+        }
+        .review-content {
+            flex-grow: 1;
+        }
+        .stars {
+            color: #ffd700;
+        }
+        .review-form {
+            text-align: center;
+            padding: 20px;
+        }
+        .review-form input, .review-form textarea {
+            width: 50%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #d4af37;
+            background: #1e1e1e;
+            color: #e0e0e0;
+        }
+        .review-form button {
+            background: #d4af37;
+            color: #121212;
+            padding: 10px 20px;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .review-form button:hover {
+            background: #ffd700;
+        }
+    

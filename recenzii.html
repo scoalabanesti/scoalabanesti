@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reviewuri | Scoala Gimnaziala Banesti</title>
+    <link rel="stylesheet" href="recenzii.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+    <header>
+        <h1>Reviewuri | Scoala Gimnaziala "Mihai Eminescu"</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Acasa</a></li>
+                <li><a href="orare.html">Orare</a></li>
+                <li><a href="desprenoi.html">Despre Noi</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="recenzii.html">Recenzii</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Ce spun elevii si parintii</h2>
+        <section class="reviews" id="reviews">
+            
+        </section>
+        <section class="review-form">
+            <div class="card">
+            <h2>Adauga un review</h2>
+            <input type="text" id="name" placeholder="Numele tau" required>
+            <textarea id="reviewText" placeholder="Scrie review-ul tau aici" required></textarea>
+            <button onclick="addReview()">Trimite Review</button>
+        </div>
+        </section>
+    </main>
+    <script>
+        document.addEventListener("DOMContentLoaded", loadReviews);
+
+function addReview() {
+    const name = document.getElementById('name').value;
+    const reviewText = document.getElementById('reviewText').value;
+    if (name === '' || reviewText === '') {
+        alert('Te rog să completezi toate câmpurile!');
+        return;
+    }
+    
+    const review = { name, reviewText };
+    let reviews = JSON.parse(localStorage.getItem('reviews')) || [];
+    reviews.push(review);
+    localStorage.setItem('reviews', JSON.stringify(reviews));
+    
+    displayReview(review);
+    document.getElementById('name').value = '';
+    document.getElementById('reviewText').value = '';
+}
+
+function loadReviews() {
+    let reviews = JSON.parse(localStorage.getItem('reviews')) || [];
+    reviews.forEach(displayReview);
+}
+
+function displayReview(review) {
+    const reviewSection = document.getElementById('reviews');
+    const reviewCard = document.createElement('div');
+    reviewCard.classList.add('review-card');
+    reviewCard.innerHTML = `
+        <img src="pfpm.jpg" alt="${review.name}">
+        <div class="review-content">
+            <h3>${review.name}</h3>
+            <p class="stars">★★★★★</p>
+            <p>"${review.reviewText}"</p>
+        </div>
+    `;
+    reviewSection.appendChild(reviewCard);
+}
+    </script>
+</body>
+</html>
