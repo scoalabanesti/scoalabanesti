@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Feedback Școala Bănești</title>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #000000;
+      --accent: #000000;
+      --radius: 12px;
+      --spacing: 1.5rem;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, 'San Francisco', 'Helvetica Neue', sans-serif;
+      line-height: 1.7;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 5vh auto;
+      padding: 0 var(--spacing);
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    h2 {
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: #666;
+      margin-bottom: 2rem;
+    }
+
+    label {
+      font-weight: 500;
+      font-size: 1rem;
+      display: block;
+      margin: 1.5rem 0 0.5rem;
+    }
+
+    .input-group {
+      margin-bottom: 1rem;
+    }
+
+    input[type="radio"] {
+      margin-right: 0.6rem;
+      transform: scale(1.1);
+    }
+
+    textarea, input[type="text"] {
+      width: 100%;
+      padding: 0.75rem;
+      margin-top: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: var(--radius);
+      font-size: 1rem;
+      background: #f9f9f9;
+    }
+
+    button {
+      margin-top: 2rem;
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: var(--radius);
+      background: var(--accent);
+      color: white;
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: #222;
+    }
+
+    a {
+      color: var(--text);
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Feedback site Școala Bănești</h1>
+    <h2>Chestionar pentru elevi</h2>
+    <p><strong>Scop:</strong> Colectăm opinii despre utilitatea site-ului <a href="https://scoalabanesti.com" target="_blank">scoalabanesti.com</a>.</p>
+
+    <form id="surveyForm">
+      <label>Cât de des accesezi site-ul?</label>
+      <div class="input-group">
+        <input type="radio" name="q1" value="zilnic"> Zilnic<br>
+        <input type="radio" name="q1" value="saptamanal"> De câteva ori pe săptămână<br>
+        <input type="radio" name="q1" value="lunar"> O dată pe lună<br>
+        <input type="radio" name="q1" value="rar"> Rar sau niciodată
+      </div>
+
+      <label>Designul și aspectul general al site-ului:</label>
+      <div class="input-group">
+        <input type="radio" name="q2" value="modern"> Foarte atractiv și modern<br>
+        <input type="radio" name="q2" value="ok"> Acceptabil, dar ar putea fi îmbunătățit<br>
+        <input type="radio" name="q2" value="invechit"> Puțin învechit<br>
+        <input type="radio" name="q2" value="neplacut"> Nu mi-a plăcut deloc
+      </div>
+
+      <label>Informațiile disponibile pe site sunt utile?</label>
+      <div class="input-group">
+        <input type="radio" name="q3" value="foarte utile"> Da, foarte utile<br>
+        <input type="radio" name="q3" value="partial"> Parțial utile<br>
+        <input type="radio" name="q3" value="neutile"> Nu prea utile<br>
+        <input type="radio" name="q3" value="n-am folosit"> Nu am folosit site-ul
+      </div>
+
+      <label>Ai întâmpinat dificultăți în navigare?</label>
+      <div class="input-group">
+        <input type="radio" name="q4" value="usor"> Nu, este ușor de folosit<br>
+        <input type="radio" name="q4" value="uneori"> Uneori<br>
+        <input type="radio" name="q4" value="frecvent"> Da, frecvent<br>
+        <input type="radio" name="q4" value="nesigur"> Nu știu / Nu am folosit suficient
+      </div>
+
+      <label>Ce tip de conținut ai dori să adăugăm?</label>
+      <textarea name="q5" rows="3" placeholder="Ex: materiale de studiu, orar, galerii foto..."></textarea>
+
+      <label>Site-ul ajută la comunicarea școală-elevi?</label>
+      <div class="input-group">
+        <input type="radio" name="q6" value="da"> Da<br>
+        <input type="radio" name="q6" value="nu"> Nu<br>
+        <input type="radio" name="q6" value="nesigur"> Nu sunt sigur
+      </div>
+
+      <label>Ai sugestii pentru îmbunătățire?</label>
+      <textarea name="q7" rows="3" placeholder="Scrie aici părerile tale..."></textarea>
+
+      <button type="submit">Trimite</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById("surveyForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      alert("Mulțumim! Răspunsul tău a fost înregistrat.");
+      this.reset();
+    });
+  </script>
+</body>
+</html>
